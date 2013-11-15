@@ -17,19 +17,41 @@ huecli.php is a command line light changer. On the command line:
 
     ./huecli.php
         -i [Hue bridge's ip]
+
+      If you don't already have a valid registered key for this Hue bridge:
         -g [register a new key with the Hue bridge]
+
+      Once have a registered key, you need to specify it with -k:
         -k [valid key that is registered with your Hue hub]
-        -f [fetch full state from Hue hub]
-        -l [light number]
-        -c [check light state: returns 0 when light is off, 1 when on]
-        -h [hue in degrees on the color circle 0-360]
-        -s [saturation 0-254]
-        -b [brightness 0-254]
-        -t [white color temp 150-500]
-        -o [0 for turning the light off, 1 for turning it on]
-        -r [transition time, in seconds. Decimals are legal (".1", for instance)]
-        -n [color name (see below)]
-        -e [command to execute before changing light setting]
+
+      Use it in combination with one of the following parameters:
+
+        To get information from the bridge:
+          -f [fetch full state from Hue hub]
+          -c [check light states: returns 0 when a light is off, 1 when on]
+
+        To control the bridge:
+          If you don't specify a light number, huecli will target all bulbs:
+            -l [light number]
+
+          Turning a light on or off:
+            -o [0 for turning the light off, 1 for turning it on]
+
+          To set a new color, pick one of the following options:
+            -n [color name (see below)]
+
+            or
+            -h [hue in degrees on the color circle 0-360]
+            -s [saturation 0-254]
+            -b [brightness 0-254]
+
+            or
+            -t [white color temp 150-500]
+
+          Additionally options are:
+            -r [transition time, in seconds. Decimals are legal (".1", for instance)]
+            -e [command to execute before changing light setting]
+
 
 You need to specify an ip (-i), a key (-k) and at least one of the following options: -h, -s, -b, -t, -o or -n. If you don't specify a light, it'll set the values you specify on all of them.
 
