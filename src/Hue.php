@@ -8,6 +8,7 @@ class Hue
 {
     private $bridge;
     private $key;
+    /** @var Light[] */
     private $lights;
     /** @var Pest */
     private $pest;

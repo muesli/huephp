@@ -3,7 +3,7 @@
 
 use Hue\Hue;
 
-/** @var string[] $composerAutoload */
+/* Load Composer's Autoloader */
 $composerAutoload = [
     __DIR__ . '/../vendor/autoload.php', // in repo
     __DIR__ . '/../../autoload.php', // as composer binary
@@ -18,7 +18,7 @@ foreach ($composerAutoload as $autoload) {
 
 function echoHelp()
 {
-    echo "./huecli.php" .
+    echo "./" . basename(__FILE__) .
          "\n\t-i [Hue bridge's ip]" .
          "\n" .
          "\n\tIf you don't already have a valid registered key for this Hue bridge:" .
