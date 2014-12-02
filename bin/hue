@@ -18,7 +18,7 @@ foreach ($composerAutoload as $autoload) {
 
 function echoHelp()
 {
-    echo "./" . basename(__FILE__) .
+    echo "./" . basename( __FILE__ ) .
          "\n\t-i [Hue bridge's ip]" .
          "\n" .
          "\n\tIf you don't already have a valid registered key for this Hue bridge:" .
@@ -161,5 +161,3 @@ foreach ($lights as $light) {
     $hue->lights()[$light]->setLight( $command );
 }
 echoLightState( $lights );
-
-?>
