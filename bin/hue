@@ -34,7 +34,7 @@ function echoHelp()
          "\n\t\t\t-c [check light states: returns 0 when a light is off, 1 when on]" .
          "\n" .
          "\n\t\tTo control the bridge:" .
-         "\n\t\t\tIf you don't specify a light number, huecli will target all bulbs:" .
+         "\n\t\t\tIf you don't specify a light number, bin/hue will target all bulbs:" .
          "\n\t\t\t\t-l [light number]" .
          "\n" .
          "\n\t\t\tTurning a light on or off:" .
@@ -83,7 +83,7 @@ if (isset( $args['i'] ) && isset( $args['g'] )) {
     } else if (isset( $data[0]["success"] )) {
         echo "Registered new key with Hue bridge: " . $data[0]["success"]["username"] . "\n";
         echo "You can now try to turn on a light like this:" .
-             "\n\n\t./huecli.php -i " . $args['i'] . " -k " . $data[0]["success"]["username"] . " -o 1\n";
+             "\n\n\t". basename( __FILE__ ) ." -i " . $args['i'] . " -k " . $data[0]["success"]["username"] . " -o 1\n";
     }
     exit( 0 );
 }
