@@ -53,7 +53,8 @@ function echoHelp()
          "\n" .
          "\n\t\t\tAdditionally options are:" .
          "\n\t\t\t\t-r [transition time, in seconds. Decimals are legal (\".1\", for instance)]" .
-         "\n\t\t\t\t-e [command to execute before changing light setting]";
+         "\n\t\t\t\t-e [command to execute before changing light setting]" .
+         "\n";
 }
 
 function echoLightState( $lights )
