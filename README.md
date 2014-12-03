@@ -15,7 +15,7 @@ huecli.php
 
 huecli.php is a command line light changer. On the command line:
 
-    ./huecli.php
+    ./bin/hue
         -i [Hue bridge's ip]
 
       If you don't already have a valid registered key for this Hue bridge:
