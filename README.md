@@ -6,7 +6,11 @@ PHP library to control the Phillips Hue lighting system. Started out as a fork o
 Getting Started
 ---------------
 
-hue.php contains the entire huephp class and all its functions for interacting with the Hue hub.
+The src/ directory contains the huephp classes and all necessary functions for interacting with the Hue hub.
+
+Additionally, you can easily require huephp as a dependency using [composer](https://getcomposer.org/)
+
+`php composer.phar require muesli/huephp ~1.0`
 
 Check out the "samples" directory. You'll find a few demos, showing you how to interact with huephp. It uses the PEST php REST client for ease of communication, but as a user of huephp, you don't need to worry about the details.
 

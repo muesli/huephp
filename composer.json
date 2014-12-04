@@ -2,7 +2,7 @@
     "name": "muesli/huephp",
     "description": "PHP library to control the Phillips Hue lighting system",
     "minimum-stability": "stable",
-    "license": "proprietary",
+    "license": "MIT",
     "authors": [
         {
             "name": "Christian Muehlhaeuser",
