@@ -12,7 +12,7 @@ Additionally, you can easily require huephp as a dependency using [composer](htt
 
 `php composer.phar require muesli/huephp ~1.0`
 
-Check out the "samples" directory. You'll find a few demos, showing you how to interact with huephp. It uses the PEST php REST client for ease of communication, but as a user of huephp, you don't need to worry about the details.
+Check out the "samples" directory. You'll find a few demos, showing you how to interact with huephp. It uses the PEST library to access Hue's RESTful API, but as a user of huephp, you don't need to worry about the details.
 
 hue command-line tool
 ---------------------
