@@ -39,7 +39,7 @@ class Light
             $this->sat       = @$data["state"]["sat"];
             $this->ct        = @$data["state"]["ct"];
             $this->alert     = $data["state"]["alert"];
-            $this->effect    = $data["state"]["effect"];
+            $this->effect    = @$data["state"]["effect"];
             $this->colormode = $data["state"]["colormode"];
         }
     }
