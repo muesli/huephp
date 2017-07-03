@@ -40,7 +40,7 @@ class Light
             $this->ct        = @$data["state"]["ct"];
             $this->alert     = $data["state"]["alert"];
             $this->effect    = @$data["state"]["effect"];
-            $this->colormode = $data["state"]["colormode"];
+            $this->colormode = @$data["state"]["colormode"];
         }
     }
 
