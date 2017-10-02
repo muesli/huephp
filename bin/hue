@@ -57,14 +57,29 @@ function echoHelp()
          "\n";
 }
 
-function echoLightState( $lights )
+function echoLightState( $lights, $detail=false)
 {
     global $hue;
     $state = '';
 
     foreach ($lights as $light) {
         $state = $hue->lights()[$light]->state();
-        echo "Light " . $light . " (" . $hue->lights()[$light]->name() . ") is " . ( $state ? "on" : "off" ) . "\n";
+        if($detail){
+	    $bri = $hue->lights()[$light]->bri();
+            $hueLevel = $hue->lights()[$light]->hue();
+            $sat = $hue->lights()[$light]->sat();
+            $ct = $hue->lights()[$light]->ct();
+            $reachable = $hue->lights()[$light]->reachable();
+
+            echo "Light " . $light . " " . $hue->lights()[$light]->name() . " (".$hue->lights()[$light]->modelid().") \n";
+            echo "    The light status is: " . ( $state ? "on" : "off" ) . " and " . ( $reachable ? "reachable" : "not reachable" )."\n";
+            echo "    Brightnes: ".$bri."\n";
+            echo "    Hue: ".$hueLevel."\n";
+            echo "    Sat: ".$sat."\n";
+            echo "    Ct: ".$ct."\n";
+	} else {
+	    echo "Light " . $light . " (" . $hue->lights()[$light]->name() . ") is " . ( $state ? "on" : "off" ) . "\n";
+	}
     }
 
     return $state;
@@ -116,7 +131,7 @@ if ( ! isset( $args['l'] )) {
 
 // do we want to get the lights' state
 if (isset( $args['c'] )) {
-    $state = echoLightState( $lights );
+    $state = echoLightState( $lights, true);
     exit( ( count( $lights ) == 1 && $state ) ? 1 : 0 );
 }
 
