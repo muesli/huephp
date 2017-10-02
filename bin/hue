@@ -64,22 +64,22 @@ function echoLightState( $lights, $detail=false)
 
     foreach ($lights as $light) {
         $state = $hue->lights()[$light]->state();
-        if($detail){
-	    $bri = $hue->lights()[$light]->bri();
+        if ( $detail ) {
+            $bri = $hue->lights()[$light]->bri();
             $hueLevel = $hue->lights()[$light]->hue();
             $sat = $hue->lights()[$light]->sat();
             $ct = $hue->lights()[$light]->ct();
             $reachable = $hue->lights()[$light]->reachable();
 
             echo "Light " . $light . " " . $hue->lights()[$light]->name() . " (".$hue->lights()[$light]->modelid().") \n";
-            echo "    The light status is: " . ( $state ? "on" : "off" ) . " and " . ( $reachable ? "reachable" : "not reachable" )."\n";
-            echo "    Brightnes: ".$bri."\n";
-            echo "    Hue: ".$hueLevel."\n";
-            echo "    Sat: ".$sat."\n";
-            echo "    Ct: ".$ct."\n";
-	} else {
-	    echo "Light " . $light . " (" . $hue->lights()[$light]->name() . ") is " . ( $state ? "on" : "off" ) . "\n";
-	}
+            echo "\tTurned " . ( $state ? "on" : "off" ) . " and " . ( $reachable ? "reachable" : "not reachable" )."\n";
+            echo "\tBrightness: ".$bri."\n";
+            echo "\tHue: ".$hueLevel."\n";
+            echo "\tSat: ".$sat."\n";
+            echo "\tCt: ".$ct."\n";
+        } else {
+	        echo "Light " . $light . " (" . $hue->lights()[$light]->name() . ") is " . ( $state ? "on" : "off" ) . "\n";
+        }
     }
 
     return $state;
