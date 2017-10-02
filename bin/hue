@@ -57,7 +57,7 @@ function echoHelp()
          "\n";
 }
 
-function echoLightState( $lights, $detail=false)
+function echoLightState( $lights, $detail = false )
 {
     global $hue;
     $state = '';
