@@ -1,7 +1,7 @@
 huephp
 ======
 
-PHP library to control the Phillips Hue lighting system. Started out as a fork of the unmaintained phpHue class (https://github.com/danray0424/phpHue) and ended up as a complete rewrite.
+PHP library to control the Philips Hue lighting system. Started out as a fork of the unmaintained phpHue class (https://github.com/danray0424/phpHue) and ended up as a complete rewrite.
 
 Getting Started
 ---------------
